@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f7f7f7;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#new-habit {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#add-habit {
+    padding: 5px 10px;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.habits-container {
+    display: flex;
+    flex-wrap: wrap;          /* wrap to next row if too many habits */
+    justify-content: center;
+    gap: 20px;                /* spacing between habit grids */
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.habit {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    min-width: 220px;        /* ensure enough space for 7-day week */
+}
+
+.habit h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between; /* title left, button right */
+    align-items: center;
+}
+
+.removehabbitbutton {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 3px 6px;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.habit button:hover {
+    background-color: #c62828;
+}
+
+.grid {
+    display: grid;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Month view — small square layout */
+.grid.month {
+    grid-template-columns: repeat(7, 1fr); /* 7 days per week */
+    width: 280px; /* adjust for your cell size */
+}
+
+/* Year view — denser grid */
+.grid.year {
+    grid-template-columns: repeat(31, 1fr); /* 31 columns to fit 365 days roughly */
+    width: 620px; /* wider, but still contained */
+}
+
+.cell {
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cell.done {
+    background-color: #4caf50;
+}
+
+.cell:hover {
+    background-color: #81c784;
+}
+
+.grid.year .cell {
+    width: 10px;
+    height: 10px;
+}
+
+.grid.month .cell {
+    width: 25px;
+    height: 25px;
+}
+
+
+.cell.done {
+    background-color: #4caf50;
+}
+
+
+#view-toggle button {
+    margin-right: 8px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background: #f4f4f4;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+#view-toggle button:hover {
+    background: #e0e0e0;
+}
+
+#view-toggle button.active {
+    background: #1976d2;
+    color: white;
+    border-color: #1976d2;
+}
+
+
+#monthPicker {
+    padding: 6px;
+    font-size: 16px;
+    margin: auto;
+}
